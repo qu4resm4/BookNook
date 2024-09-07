@@ -9,6 +9,13 @@ from functools import wraps
 
 def auth():
     auth = request.authorization
+    print(auth)
+    print("--------------")
+    print(type(auth))
+    print("--------------------")
+    print(auth.username)
+    print("----------")
+    print(auth.password)
     if not auth or not auth.username or not auth.password:
         return jsonify({'message': 'não foi possível verificar', 'WWW-Authenticate': 'Basic auth="Necessário estar logado"'}), 401
 
